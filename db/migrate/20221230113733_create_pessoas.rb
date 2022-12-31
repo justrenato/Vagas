@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreatePessoas < ActiveRecord::Migration[7.0]
   def change
     create_table :pessoas do |t|

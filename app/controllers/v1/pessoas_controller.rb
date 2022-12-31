@@ -1,44 +1,48 @@
-class V1::PessoasController < ApplicationController
-  before_action :set_pessoa, only: %i[ show update destroy ]
+# frozen_string_literal: true
 
-  # GET /pessoas
-  def index
-    @pessoas = Pessoa.all
+module V1
+  class PessoasController < ApplicationController
+    before_action :set_pessoa, only: %i[show update destroy]
 
-    render json: @pessoas
-  end
+    # GET /pessoas
+    def index
+      @pessoas = Pessoa.all
 
-  # GET /pessoas/1
-  def show
-    render json: @pessoa
-  end
-
-  # POST /pessoas
-  def create
-    @pessoa = Pessoa.new(pessoa_params)
-
-    if @pessoa.save
-      render json: @pessoa, status: :created, location: @pessoa
-    else
-      render json: @pessoa.errors, status: :unprocessable_entity
+      render json: @pessoas
     end
-  end
 
-  # PATCH/PUT /pessoas/1
-  def update
-    if @pessoa.update(pessoa_params)
+    # GET /pessoas/1
+    def show
       render json: @pessoa
-    else
-      render json: @pessoa.errors, status: :unprocessable_entity
     end
-  end
 
-  # DELETE /pessoas/1
-  def destroy
-    @pessoa.destroy
-  end
+    # POST /pessoas
+    def create
+      @pessoa = Pessoa.new(pessoa_params)
 
-  private
+      if @pessoa.save
+        render json: @pessoa, status: :created, location: v1_pessoa_url(@pessoa)
+      else
+        render json: @pessoa.errors, status: :unprocessable_entity
+      end
+    end
+
+    # PATCH/PUT /pessoas/1
+    def update
+      if @pessoa.update(pessoa_params)
+        render json: @pessoa
+      else
+        render json: @pessoa.errors, status: :unprocessable_entity
+      end
+    end
+
+    # DELETE /pessoas/1
+    def destroy
+      @pessoa.destroy
+    end
+
+    private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_pessoa
       @pessoa = Pessoa.find(params[:id])
@@ -48,4 +52,5 @@ class V1::PessoasController < ApplicationController
     def pessoa_params
       params.require(:pessoa).permit(:nome, :profissao, :localizacao, :nivel)
     end
+  end
 end
