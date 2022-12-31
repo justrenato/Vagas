@@ -1,9 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Este é um projeto desenvolvido para o teste técnico da empresa Vagas.com
 
 * Ruby version: 
 	`ruby-3.1.3`
