@@ -44,6 +44,7 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'byebug'
 end
 
 
@@ -51,3 +52,6 @@ gem 'sass-rails'
 gem 'kaminari'
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'binding_of_caller', '~> 1.0'
+gem 'pry'
+gem 'pry-byebug'
+gem 'priority_queue'
