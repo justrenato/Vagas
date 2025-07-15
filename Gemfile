@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.4'
+gem 'rails', '~> 7.1.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -49,7 +49,7 @@ group :development do
   gem 'byebug'
 end
 
-gem 'better_errors', '~> 2.9', '>= 2.9.1'
+gem 'better_errors', '~> 2.10', '>= 2.10.0'
 gem 'binding_of_caller', '~> 1.0'
 gem 'httparty'
 gem 'kaminari'
