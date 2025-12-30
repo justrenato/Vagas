@@ -51,7 +51,7 @@ end
 
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'binding_of_caller', '~> 1.0'
-gem 'httparty'
+gem 'httparty', '>= 0.24.0'
 gem 'kaminari'
 gem 'priority_queue'
 gem 'pry'
